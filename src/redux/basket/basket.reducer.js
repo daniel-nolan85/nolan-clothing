@@ -1,5 +1,5 @@
 import BasketActionTypes from './basket.types';
-import {addItemToBasket} from './basket.utils';
+import {addItemToBasket, removeItemFromBasket} from './basket.utils';
 
 const INITIAL_STATE = {
     hidden: true,
@@ -17,6 +17,18 @@ const basketReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 basketItems: addItemToBasket(state.basketItems, action.payload)
+            };
+        case BasketActionTypes.REMOVE_ITEM:
+            return {
+                ...state,
+                basketItems: removeItemFromBasket(state.basketItems, action.payload)
+            };
+        case BasketActionTypes.CLEAR_ITEM_FROM_BASKET:
+            return {
+                ...state,
+                basketItems: state.basketItems.filter(
+                    basketItem => basketItem.id !== action.payload.id
+                )
             };
         default:
             return state;

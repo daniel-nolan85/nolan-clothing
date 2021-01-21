@@ -1,17 +1,39 @@
 import React from 'react';
+import {connect} from 'react-redux';
+
+import {clearItemFromBasket, addItem, removeItem} from '../../redux/basket/basket.actions';
 
 import './checkout-item.styles.scss';
 
-const CheckoutItem = ({basketItem: {name, imageUrl, price, quantity}}) => (
-    <div className="checkout-item">
-        <div className="image-container">
-            <img src={imageUrl} alt="item"/>
+const CheckoutItem = ({basketItem, clearItem, addItem, removeItem}) => {
+    const {name, imageUrl, price, quantity} = basketItem;
+    return (
+        <div className="checkout-item">
+            <div className="image-container">
+                <img src={imageUrl} alt="item"/>
+            </div>
+            <span className="name">{name}</span>
+            <span className="quantity">
+                <div className="arrow" onClick={() => removeItem(basketItem)}>
+                    &#10094;
+                </div>
+                <span className='value'>{quantity}</span>
+                <div className="arrow" onClick={() => addItem(basketItem)}>
+                    &#10095;
+                </div>
+            </span>
+            <span className="price">{price}</span>
+            <div className="remove-button" onClick={() => clearItem(basketItem)}>
+                &#10005;
+            </div>
         </div>
-        <span className="name">{name}</span>
-        <span className="quantity">{quantity}</span>
-        <span className="price">{price}</span>
-        <div className="remove-button">&#10005;</div>
-    </div>
-);
+    );
+};
 
-export default CheckoutItem;
+const mapDispatchToProps = dispatch => ({
+    clearItem: item => dispatch(clearItemFromBasket(item)),
+    addItem: item => dispatch(addItem(item)),
+    removeItem: item => dispatch(removeItem(item))
+});
+
+export default connect(null, mapDispatchToProps)(CheckoutItem);
