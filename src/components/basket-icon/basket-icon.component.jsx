@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {createStructuredSelector} from 'reselect';
 
 import {toggleBasketHidden} from '../../redux/basket/basket.actions';
 import {selectBasketItemsCount} from '../../redux/basket/basket.selectors';
@@ -19,8 +20,8 @@ const mapDispatchToProps = dispatch => ({
     toggleBasketHidden: () => dispatch(toggleBasketHidden())
 });
 
-const mapStateToProps = state => ({
-    itemCount: selectBasketItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+    itemCount: selectBasketItemsCount
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BasketIcon);
