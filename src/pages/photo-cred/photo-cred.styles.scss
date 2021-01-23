@@ -1,0 +1,27 @@
+.photo-cred-page {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-gap: 10px;
+    text-align: center;
+
+    @media screen and (max-width: 992px) {
+        grid-template-columns: 2fr 2fr;
+    }
+
+    @media screen and (max-width: 640px) {
+        grid-template-columns: 1fr;
+    }
+        
+        img {
+            height: 150px;
+            width: 150px;
+            margin-top: 20px;
+            border: 1px solid #a18930;
+            border-radius: 50%;
+        }
+
+        a {
+            color: #000;
+            font-weight: 700;
+        }
+}
