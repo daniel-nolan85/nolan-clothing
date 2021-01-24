@@ -18,7 +18,7 @@ const MobileNav = styled.div`
         height: 2rem;
         position: fixed;
         top: 40px;
-        right: 40px;
+        right: 70px;
         z-index: 30;
         display: flex;
         justify-content: space-around;
@@ -63,7 +63,7 @@ const Options = styled.div`
         top: 0;
         right: 0;
         height: 100vh;
-        width: 250px;
+        width: 180px;
         z-index: 20;
         transition: transform 0.3s ease-in-out;
     }
@@ -77,7 +77,11 @@ const Options = styled.div`
         cursor: pointer;
         @media (max-width: 860px) {
             color: #fff;
+            &:nth-child(1) {
+                margin-top: 80px;
+            }
         }
+        
     }
 `;
     
