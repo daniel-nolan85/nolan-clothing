@@ -7,6 +7,7 @@ import './App.css';
 
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
+import Modal from './components/modal/modal.component';
 
 import HomePage from './pages/homepage/homepage.component';
 import PhotoCredPage from './pages/photo-cred/photo-cred.component';
@@ -47,6 +48,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <Modal />
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route 
