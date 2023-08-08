@@ -11,11 +11,11 @@ import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter basename='/nolan-clothing'>
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>
-    </HashRouter>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
