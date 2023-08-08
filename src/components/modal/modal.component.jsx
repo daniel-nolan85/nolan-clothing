@@ -10,6 +10,7 @@ const MyModal = () => {
   const closeModal = () => {
     setmodalIsOpen(false);
     window.location.href = 'https://daniel-nolan85.github.io/';
+    console.log('redirect');
   };
 
   return (
