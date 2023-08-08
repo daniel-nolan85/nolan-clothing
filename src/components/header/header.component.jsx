@@ -89,7 +89,7 @@ const Header = ({ currentUser, hidden }) => {
   const [open, setOpen] = React.useState(false);
   return (
     <div className='header'>
-      <Link className='logo-container' to='/nolan-clothing'>
+      <Link className='logo-container' to='/'>
         <Logo className='logo' />
       </Link>
 

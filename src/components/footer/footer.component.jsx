@@ -8,7 +8,7 @@ import './footer.styles.scss';
 
 const Footer = () => (
   <div className='footer'>
-    <Link className='logo-container' to='/nolan-clothing'>
+    <Link className='logo-container' to='/'>
       <Logo className='logo' />
     </Link>
     <span>from</span>
