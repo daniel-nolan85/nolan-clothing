@@ -2,7 +2,7 @@
   "name": "nolan-clothing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daniel-nolan85.github.io/nolan-clothing",
+  "homepage": "https://github.com/daniel-nolan85/nolan-clothing.git",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
