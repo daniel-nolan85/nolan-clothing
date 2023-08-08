@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import './modal.styles.scss';
@@ -8,12 +7,8 @@ Modal.setAppElement('#root');
 const MyModal = () => {
   const [modalIsOpen, setmodalIsOpen] = React.useState(true);
 
-  const history = useHistory();
-
   const closeModal = () => {
-    console.log('redirect');
     setmodalIsOpen(false);
-    history.push('/');
   };
 
   return (
